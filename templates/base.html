@@ -1,0 +1,73 @@
+{% load static i18n hijack_tags sekizai_tags common webpack_loader %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_settings "LOAD_EXTERNAL_REFS" as LOAD_EXTERNAL_REFS %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+  <meta name="description" content="{% block meta_description %}{% endblock %}">
+
+  <title>{% block title %}{% endblock %} - Gusgain</title>
+
+  {% comment %}
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static "img/favicon/apple-touch-icon.png" %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static "img/favicon/favicon-32x32.png" %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static "img/favicon/favicon-16x16.png" %}">
+  <meta name="theme-color" content="#ffffff">
+  {% endcomment %}
+
+  {% comment %}
+  Put third party links here, external and local
+  {% if LOAD_EXTERNAL_REFS %}
+  {% else %}
+  {% endif %}
+  {% endcomment %}
+
+  {% comment %}
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  {% endcomment %}
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static "vendor/css/bootstrap.min.css" %}">
+  <link rel="stylesheet" href="{% static "vendor/css/font-awesome.min.css" %}">
+  <link rel="stylesheet" href="{% static "vendor/css/aos.css" %}">
+  <link rel="stylesheet" href="{% static "vendor/css/owl.carousel.min.css" %}">
+  <link rel="stylesheet" href="{% static "vendor/css/owl.theme.default.min.css" %}">
+  <link rel="stylesheet" href="{% static "vendor/css/templatemo-digital-trend.css" %}">
+
+  <link href="{% static "hijack/hijack-styles.css" %}" rel="stylesheet">
+  {% render_block "css" %}
+</head>
+<body id="{% block body_id %}default{% endblock %}" class="{% block body_class %}default{% endblock %}">
+  {% hijack_notification %}
+
+  {% block layout %}{% endblock %}
+
+  {% comment %}
+  Put third party js here, external and local
+  {% if LOAD_EXTERNAL_REFS %}
+  {% else %}
+  {% endif %}
+  {% endcomment %}
+
+  <script src="{% static "vendor/js/jquery.min.js" %}"></script>
+  <script src="{% static "vendor/js/bootstrap.min.js" %}"></script>
+  <script src="{% static "vendor/js/aos.js" %}"></script>
+  <script src="{% static "vendor/js/owl.carousel.min.js" %}"></script>
+  <script src="{% static "vendor/js/smoothscroll.js" %}"></script>
+  <script src="{% static "vendor/js/custom.js" %}"></script>
+
+  {% render_block "js" %}
+</body>
+</html>

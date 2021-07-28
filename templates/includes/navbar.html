@@ -1,0 +1,32 @@
+{% url 'contact' as contact_url %}
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <i class="fa fa-line-chart">Gusgain </i>
+
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a href="{% if request.get_full_path == contact_url %}/{% else %}#hero{% endif %}" class="nav-link smoothScroll">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% if request.get_full_path == contact_url %}/{% endif %}#about" class="nav-link smoothScroll">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% if request.get_full_path == contact_url %}/{% endif %}#project" class="nav-link">Servicios</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url "contact" %}" class="nav-link contact">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,48 @@
+.messages {
+  padding-top: 20px;
+}
+
+.section-padding.contact {
+  padding-top: 20px;
+}
+
+input, textarea {
+  background: #f0f8ff;
+  border: 1px solid darken(#f0f8ff, 15%);
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  &:focus {
+    outline: none;
+  }
+}
+
+input {
+  margin-bottom: 10px;
+}
+/*
+  .header {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+*/
+
+/*
+#contact-form {
+  max-width: 550px;
+  margin: 0 auto;
+  border: 1px solid #bbb;
+  padding: 35px;
+  .control-group {
+    width: 100%;
+    .controls {
+      width: 100%;
+      input, textarea {
+        width: 100%;
+        padding: 10px 5px;
+      }
+    }
+  }
+}
+*/

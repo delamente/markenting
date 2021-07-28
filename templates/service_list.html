@@ -1,0 +1,13 @@
+{% extends "layouts/main.html" %}
+
+{% block title %}Servicios{% endblock %}
+{% block body_id %}Servicios{% endblock %}
+
+{% block content %}
+  <div>
+    <h1>Servicios</h1>
+    {% for service in services %}
+      <a href="{{ service.get_absolute_url }}">{{ service }}</a>
+    {% endfor %}
+  </div>
+{% endblock %}

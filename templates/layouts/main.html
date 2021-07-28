@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load sekizai_tags webpack_loader %}
+
+{% block layout %}
+  {% include "includes/navbar.html" %}
+
+  {% if messages %}
+    <div class="container messages">
+      {% for message in messages %}
+        <div class="alert alert-primary" role="alert">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% block content %}{% endblock %}
+  {% include "includes/footer.html" %}
+  {% addtoblock "css" %}
+    {% render_bundle "styles" "css" %}
+  {% endaddtoblock %}
+{% endblock %}

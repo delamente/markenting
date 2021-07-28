@@ -1,0 +1,10 @@
+{% extends "layouts/main.html" %}
+{% load static sekizai_tags %}
+
+{% block title %}{{ service }}{% endblock %}
+
+{% block content %}
+  <h1>{{ service }}</h1>
+  <img src="{{ service.image.url }}">
+  {{ service.description|safe }}
+{% endblock %}
